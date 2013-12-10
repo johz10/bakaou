@@ -8,12 +8,12 @@
 * Create a url by prepending the base_url.
 */
 function base_url($url) {
-  return CSamir::Instance()->request->base_url . trim($url, '/');
+  return CBakaou::Instance()->request->base_url . trim($url, '/');
 }
 
 /**
 * Return the current url.
 */
 function current_url() {
-  return CSamir::Instance()->request->current_url;
+  return CBakaou::Instance()->request->current_url;
 }

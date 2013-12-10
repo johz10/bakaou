@@ -2,7 +2,7 @@
 /**
  * Controller for development and testing purpose, helpful methods for the developer.
  * 
- * @package SamirCore
+ * @package BakaouCore
  */
 class CCDeveloper implements IController {
 
@@ -20,23 +20,23 @@ class CCDeveloper implements IController {
   public function Links() {  
     $this->Menu();
     
-    $sa = CSamir::Instance();
+    $ba = CBakaou::Instance();
     
     $url = 'developer/links';
-    $current      = $sa->request->CreateUrl($url);
+    $current      = $ba->request->CreateUrl($url);
 
-    $sa->request->cleanUrl = false;
-    $sa->request->querystringUrl = false;    
-    $default      = $sa->request->CreateUrl($url);
+    $ba->request->cleanUrl = false;
+    $ba->request->querystringUrl = false;    
+    $default      = $ba->request->CreateUrl($url);
     
-    $sa->request->cleanUrl = true;
-    $clean        = $sa->request->CreateUrl($url);    
+    $ba->request->cleanUrl = true;
+    $clean        = $ba->request->CreateUrl($url);    
     
-    $sa->request->cleanUrl = false;
-    $sa->request->querystringUrl = true;    
-    $querystring  = $sa->request->CreateUrl($url);
+    $ba->request->cleanUrl = false;
+    $ba->request->querystringUrl = true;    
+    $querystring  = $ba->request->CreateUrl($url);
     
-    $sa->data['main'] .= <<<EOD
+    $ba->data['main'] .= <<<EOD
 <h2>CRequest::CreateUrl()</h2>
 <p>Here is a list of urls created using above method with various settings. All links should lead to
 this same page.</p>
@@ -55,16 +55,16 @@ EOD;
     * Create a method that shows the menu, same for all methods
    */
   private function Menu() {  
-    $sa = CSamir::Instance();
+    $ba = CSamir::Instance();
     $menu = array('developer', 'developer/index', 'developer/links');
     
     $html = null;
     foreach($menu as $val) {
-      $html .= "<li><a href='" . $sa->request->CreateUrl($val) . "'>$val</a>";  
+      $html .= "<li><a href='" . $ba->request->CreateUrl($val) . "'>$val</a>";  
     }
     
-    $sa->data['title'] = "The Developer Controller";
-    $sa->data['main'] = <<<EOD
+    $ba->data['title'] = "The Developer Controller";
+    $ba->data['main'] = <<<EOD
 <h1>The Developer Controller</h1>
 <p>This is what you can do for now:</p>
 <ul>

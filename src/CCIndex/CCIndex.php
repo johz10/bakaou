@@ -2,7 +2,7 @@
     /**
     * Standard controller layout.
     *
-    * @package SamirCore
+    * @package BakaouCore
     */
     class CCIndex implements IController {
 
@@ -10,9 +10,9 @@
         * Implementing interface IController. All controllers must have an index action.
         */
        public function Index() {   
-          global $sa;
-          $sa->data['title'] = "The Index Controller";
-          $sa->data['main'] = "<h1>The Index Controller</h1>";
+          global $ba;
+          $ba->data['title'] = "The Index Controller";
+          $ba->data['main'] = "<h1>The Index Controller</h1>";
        }
 
     } 

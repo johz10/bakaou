@@ -2,22 +2,22 @@
 //
 // PHASE: BOOTSTRAP
 //
-define('SAMIR_INSTALL_PATH', dirname(__FILE__));
-define('SAMIR_SITE_PATH', SAMIR_INSTALL_PATH . '/site');
+define('BAKAOU_INSTALL_PATH', dirname(__FILE__));
+define('BAKAOU_SITE_PATH', BAKAOU_INSTALL_PATH . '/site');
 
-require(SAMIR_INSTALL_PATH.'/src/CSamir/bootstrap.php');
+require(BAKAOU_INSTALL_PATH.'/src/CBakaou/bootstrap.php');
 
-$sa = CSamir::Instance();
+$ba = CBakaou::Instance();
 
 //
 // PHASE: FRONTCONTROLLER ROUTE
 //
-$sa->FrontControllerRoute();
+$ba->FrontControllerRoute();
 
 //
 // PHASE: THEME ENGINE RENDER
 //
-$sa->ThemeEngineRender();
+$ba->ThemeEngineRender();
 
  //   echo "<h1>I'm Lydia - index.php</h1>";
  //   echo "<p>You are most welcome!</p>";
